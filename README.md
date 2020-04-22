@@ -44,50 +44,46 @@ tool = CLITool(greet, parse_doc=True)
 # The help message includes information from the greet docstring.
 # It also shows the additional logging parameters.
 tool("-h")
----
-usage: usage.py [-h] [--logfile LOGFILE] [--logwrite LOGWRITE]
-				[--loglevel LOGLEVEL]
-				name
-
-Greet person.
-
-positional arguments:
-  name                 name of person
-
-optional arguments:
-  -h, --help           show this help message and exit
-
-logging arguments:
-  --logfile LOGFILE    log file name; file is opened in append mode.
-  --logwrite LOGWRITE  log file name; file is opened in write mode.
-  --loglevel LOGLEVEL  logging level; default is 20 (logging.INFO).
----
+# usage: usage.py [-h] [--logfile LOGFILE] [--logwrite LOGWRITE]
+#               [--loglevel LOGLEVEL]
+#               name
+#
+# Greet person.
+#
+# positional arguments:
+#   name                 name of person
+#
+# optional arguments:
+#   -h, --help           show this help message and exit
+#
+# logging arguments:
+#   --logfile LOGFILE    log file name; file is opened in append mode.
+#   --logwrite LOGWRITE  log file name; file is opened in write mode.
+#   --loglevel LOGLEVEL  logging level; default is 20 (logging.INFO).
 
 # CLITool adds a start and end log message.
 tool("Bob")
-[INFO] Start Time: 2020-04-21 14:31:59
-[INFO] Hello Bob
-[INFO] SUCCEEDED at 2020-04-21 14:31:59 (Elapsed Time: 0:00:00.00)
+# [INFO] Start Time: 2020-04-21 14:31:59
+# [INFO] Hello Bob
+# [INFO] SUCCEEDED at 2020-04-21 14:31:59 (Elapsed Time: 0:00:00.00)
 
 # CLIToolbox can create a command line interface for one or more CLITool objects.
 toolbox = CLIToolbox()
 toolbox.add_command(tool, "greet", "Greet person")
 
 toolbox("-h")
----
-usage: usage.py [{greet}]
-
-positional arguments:
-  {greet}
-
-Commands:
-  greet           Greet person
----
+# usage: usage.py [{greet}]
+#
+# positional arguments:
+#   {greet}
+#
+# Commands:
+#   greet           Greet person
 
 toolbox("greet", "Frank")
-[INFO] Start Time: 2020-04-21 14:35:02
-[INFO] Hello Frank
-[INFO] SUCCEEDED at 2020-04-21 14:35:02 (Elapsed Time: 0:00:00.00)
+# [INFO] Start Time: 2020-04-21 14:35:02
+# [INFO] Hello Frank
+# [INFO] SUCCEEDED at 2020-04-21 14:35:02 (Elapsed Time: 0:00:00.00)
 ```
 
 ## Running the tests
