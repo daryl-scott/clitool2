@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="clitool2",
-    version="1.0",
+    version="1.1",
     author="Daryl Scott",
     author_email="daryl_scott@live.com",
     description="Create command line interface for one or more functions",

@@ -5,7 +5,7 @@ import inspect
 import sys
 from clitool2.clitool import parse_docstr, Result
 
-__version__ = "1.0"
+__version__ = "1.1"
 
 def _format_epilog(commands):
     """Create a epilog string for the specified commands.
@@ -88,6 +88,7 @@ class CLIToolbox(object):
     def __call__(self, *args):
         """Parse command line arguments, execute callable, and return Result object."""
         # Parse known arguments; remaining arguments are passed to subcommand
+        args = args or sys.argv[1:]
         this, extra = self.parser.parse_known_args(args)
 
         if not this.subcommand:

@@ -33,7 +33,7 @@ from dateutil.parser import parse as to_date
 
 # Updated on June 4, 2019 to emit trace entries at the debug level.
 # Update on August 31, 2019 to remove dependency on arcpy.
-__version__ = "1.0"
+__version__ = "1.1"
 
 # Result provides information from a wrapped function
 Result = namedtuple("Result", ("status", "output", "error"))

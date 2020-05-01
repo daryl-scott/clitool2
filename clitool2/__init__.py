@@ -19,4 +19,4 @@ from __future__ import absolute_import
 from clitool2.clitool import CLITool, Result, DocInfo, parse_docstr
 from clitool2.clitoolbox import CLIToolbox
 
-__version__ = "1.0"
+__version__ = "1.1"
